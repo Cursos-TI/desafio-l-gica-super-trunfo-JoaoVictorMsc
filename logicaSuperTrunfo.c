@@ -39,5 +39,89 @@ int main() {
     // Exemplo:
     // printf("A cidade vencedora é: %s\n", cidadeVencedora);
 
+     // variaveis do programa carta 01.
+    char estado[50], codigoDaCarta[50],nomeDaCidade[50];
+    int populacao, numeroDePontosTuristicos;
+    float area, PIB, densidadePopulacional, PIBPerCapita;
+
+    // variaveis do programa carta 02.
+    char estadoDois[50], codigoDaCartaDois[50],nomeDaCidadeDois[50];
+    int populacaoDois, numeroDePontosTuristicosDois;
+    float areaDois, PIBDois, densidadePopulacionalDois, PIBPerCapitaDois;
+
+    // Entrada de dados da carta 01.
+    printf("Carta 01: \n");
+    printf("Digite o estado uma unica letra: \n");
+    scanf("%s", estado);
+    printf("Digite o codigo: \n");
+    scanf("%s", codigoDaCarta);
+    printf("Digite o nome da Cidade: \n");
+    scanf("%s", nomeDaCidade);
+    printf("Digite a população: \n");
+    scanf("%d", &populacao);
+    printf("Digite a área: \n");
+    scanf("%f", &area);
+    printf("Digite o PIB: \n");
+    scanf("%f", &PIB);
+    printf("Digite número de pontos turisticos: \n");
+    scanf("%d", &numeroDePontosTuristicos);
+
+    // pula uma linha.
+    printf("\n");
+
+    // entrada de dados da carta 02:
+    printf("Carta 02: \n");
+    printf("Digite o estado uma unica letra: \n");
+    scanf("%s", estadoDois);
+    printf("Digite o codigo: \n");
+    scanf("%s", codigoDaCartaDois);
+    printf("Digite o nome da Cidade: \n");
+    scanf("%s", nomeDaCidadeDois);
+    printf("Digite a população: \n");
+    scanf("%d", &populacaoDois);
+    printf("Digite a área: \n");
+    scanf("%f", &areaDois);
+    printf("Digite o PIB: \n");
+    scanf("%f", &PIBDois);
+    printf("Digite número de pontos turisticos: \n");
+    scanf("%d", &numeroDePontosTuristicosDois);
+
+    // pula uma linha.
+    printf("\n");
+
+    // calculo da densidade e PIB carta 01.
+    densidadePopulacional = (float) populacao / area;
+    PIBPerCapita = (float) PIB / populacao;
+
+    // calculo da densidade e PIB carta 02.
+    densidadePopulacionalDois = (float) populacaoDois / areaDois;
+    PIBPerCapitaDois = (float) PIBDois / populacaoDois;
+
+    // exibindo os valores de densidade e PIB carta 01.
+    printf("Carta 01: \n");
+    printf("Densidade Populacional da carta 01: %.2f \n", densidadePopulacional);
+    printf("PIB per capita da carta 01: %.2f \n", PIBPerCapita);
+
+    // pula uma linha.
+    printf("\n");
+
+    // exibindo os valores de densidade e PIB carta 02.
+    printf("Carta 02: \n");
+    printf("Densidade Populacional da carta 02: %.2f \n", densidadePopulacionalDois);
+    printf("PIB per capita da carta 02: %.2f \n", PIBPerCapitaDois);
+
+    // pula uma linha.
+    printf("\n");
+    
+    // comparação usando if
+    if(PIB > PIBDois){
+        printf("Carta 1 - %s (%s): %.2f \n", nomeDaCidade, estado, PIB);
+        printf("Carta 2 - %s (%s): %.2f \n", nomeDaCidadeDois, estadoDois, PIBDois);
+        printf("Resultado: Carta 01 (%s) venceu! \n", nomeDaCidade);
+    } else {
+        printf("Carta 1 - %s (%s): %.2f \n", nomeDaCidade, estado, PIB);
+        printf("Carta 2 - %s (%s): %.2f \n", nomeDaCidadeDois, estadoDois, PIBDois);
+        printf("Resultado: Carta 02 (%s) venceu! \n", nomeDaCidadeDois);
+    }
     return 0;
 }
