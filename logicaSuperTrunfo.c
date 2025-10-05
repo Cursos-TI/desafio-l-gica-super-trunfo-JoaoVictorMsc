@@ -97,7 +97,7 @@ int main() {
     densidadePopulacionalDois = (float) populacaoDois / areaDois;
     PIBPerCapitaDois = (float) PIBDois / populacaoDois;
 
-    // exibindo os valores de densidade e PIB carta 01.
+    /*// exibindo os valores de densidade e PIB carta 01.
     printf("Carta 01: \n");
     printf("Densidade Populacional da carta 01: %.2f \n", densidadePopulacional);
     printf("PIB per capita da carta 01: %.2f \n", PIBPerCapita);
@@ -122,6 +122,102 @@ int main() {
         printf("Carta 1 - %s (%s): %.2f \n", nomeDaCidade, estado, PIB);
         printf("Carta 2 - %s (%s): %.2f \n", nomeDaCidadeDois, estadoDois, PIBDois);
         printf("Resultado: Carta 02 (%s) venceu! \n", nomeDaCidadeDois);
-    }
+    }*/
+
+    int opcao;
+
+    printf("### Escolha o atributo que sera comparado ### \n");
+    printf("1 - Nome da Cidade. \n");
+    printf("2 - População. \n");
+    printf("3 - Área. \n");
+    printf("4 - PIB. \n");
+    printf("5 - Número de pontos turísticos. \n");
+    printf("6 - Densidade demográfica. \n");
+
+    printf("Digite a opção do menu. \n");
+    scanf("%d", &opcao);
+
+    switch(opcao){
+        case 1:
+        printf("Nome das Cidades %s e %s. \n", nomeDaCidade, nomeDaCidadeDois);
+        break;
+        case 2:
+            if ( populacao > populacaoDois ){
+                printf("Nome das Cidades %s e %s. \n", nomeDaCidade, nomeDaCidadeDois);
+                printf("Você escolheu População! \n ");
+                printf("Carta 01: %d e Carta 02 %d \n", populacao, populacaoDois);
+                printf("A carta ganhadora é a carta numero 01: %d \n", populacao);
+            } else if ( populacao < populacaoDois ){
+                printf("Nome das Cidades %s e %s. \n", nomeDaCidade, nomeDaCidadeDois);
+                printf("Você escolheu População! \n ");
+                printf("Carta 01: %d e Carta 02 %d \n", populacao, populacaoDois);
+                printf("A carta ganhadora é a carta numero 02: %d \n", populacaoDois);
+            } else {
+                printf("Empate! \n");
+        }
+        break;
+        case 3:
+            if ( area > areaDois ){
+                printf("Nome das Cidades %s e %s. \n", nomeDaCidade, nomeDaCidadeDois);
+                printf("Você escolheu População! \n ");
+                printf("Carta 01: %f e Carta 02 %f \n", area, areaDois);
+                printf("A carta ganhadora é a carta numero 01: %f \n", area);
+            } else if ( area < areaDois ){
+                printf("Nome das Cidades %s e %s. \n", nomeDaCidade, nomeDaCidadeDois);
+                printf("Você escolheu População! \n ");
+                printf("Carta 01: %f e Carta 02 %f \n", area, areaDois);
+                printf("A carta ganhadora é a carta numero 02: %f \n", areaDois);
+            } else {
+                printf("Empate! \n");
+            }
+        break;
+        case 4:
+            if ( PIB > PIBDois ){
+                printf("Nome das Cidades %s e %s. \n", nomeDaCidade, nomeDaCidadeDois);
+                printf("Você escolheu População! \n ");
+                printf("Carta 01: %f e Carta 02 %f \n", PIB ,PIBDois);
+                printf("A carta ganhadora é a carta numero 01: %f \n", PIB);
+            } else if ( PIB < PIBDois ){
+                printf("Nome das Cidades %s e %s. \n", nomeDaCidade, nomeDaCidadeDois);
+                printf("Você escolheu População! \n ");
+                printf("Carta 01: %f e Carta 02 %f \n", PIB, PIBDois);
+                printf("A carta ganhadora é a carta numero 02: %f \n", PIBDois);
+            } else {
+                printf("Empate! \n");
+            }
+        break;
+        case 5:
+            if ( numeroDePontosTuristicos > numeroDePontosTuristicosDois ){
+                printf("Nome das Cidades %s e %s. \n", nomeDaCidade, nomeDaCidadeDois);
+                printf("Você escolheu População! \n ");
+                printf("Carta 01: %d e Carta 02 %d \n", numeroDePontosTuristicos, numeroDePontosTuristicosDois);
+                printf("A carta ganhadora é a carta numero 01: %d \n", numeroDePontosTuristicos);
+            } else if ( numeroDePontosTuristicos < numeroDePontosTuristicosDois ){
+                printf("Nome das Cidades %s e %s. \n", nomeDaCidade, nomeDaCidadeDois);
+                printf("Você escolheu População! \n ");
+                printf("Carta 01: %d e Carta 02 %d \n", numeroDePontosTuristicos, numeroDePontosTuristicosDois);
+                printf("A carta ganhadora é a carta numero 02: %d \n", numeroDePontosTuristicosDois);
+            } else {
+                printf("Empate! \n");
+            }
+        break;
+        case 6:
+            if ( densidadePopulacional < densidadePopulacionalDois ){
+                printf("Nome das Cidades %s e %s. \n", nomeDaCidade, nomeDaCidadeDois);
+                printf("Você escolheu População! \n ");
+                printf("Carta 01: %f e Carta 02 %f \n", densidadePopulacional ,densidadePopulacionalDois);
+                printf("A carta ganhadora é a carta numero 01: %f \n", densidadePopulacional);
+            } else if ( densidadePopulacional > densidadePopulacionalDois ){
+                printf("Nome das Cidades %s e %s. \n", nomeDaCidade, nomeDaCidadeDois);
+                printf("Você escolheu População! \n ");
+                printf("Carta 01: %f e Carta 02 %f \n", densidadePopulacional, densidadePopulacionalDois);
+                printf("A carta ganhadora é a carta numero 02: %f \n", densidadePopulacionalDois);
+            } else {
+                printf("Empate! \n");
+            }
+            break;
+            default:
+            printf("Número Invalido!");
+    }        
     return 0;
 }
